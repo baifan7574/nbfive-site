@@ -1,0 +1,94 @@
+body {
+  background: #111;
+  color: white;
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+
+header h1 {
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center; /* ✅ 确保居中 */
+}
+
+.category {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;  /* ✅ 居中显示 */
+}
+
+.category h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.thumb {
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #000;
+  transition: transform 0.3s ease;
+}
+
+.thumb:hover {
+  transform: scale(1.03);
+}
+
+.view-more {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.view-more a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* ============================= */
+/* ✅ 新增：移动端优化广告显示控制 */
+/* ============================= */
+@media (max-width: 767px) {
+  /* 手机端不显示左右两条竖广告和悬浮广告 */
+  .nb-left,
+  .nb-right,
+  #nb-float {
+    display: none !important;
+  }
+
+  /* 可以根据需要调整正文边距，防止空白 */
+  body.nb-has-top {
+    padding-top: 56px; /* 保留顶部横幅广告高度 */
+  }
+
+  body.nb-has-bottom {
+    padding-bottom: 56px; /* 保留底部横幅广告高度 */
+  }
+}
